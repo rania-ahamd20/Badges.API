@@ -42,7 +42,7 @@ namespace Badges.Api.Controllers
             return _userService.DeleteUser(id);
         }
         [HttpGet]
-        [Route("GetUserById/{id}")]
+        [Route("GetById/{id}")]
         public User GetUserById(int id)
         {
             return _userService.GetUserById(id);

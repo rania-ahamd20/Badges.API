@@ -57,7 +57,7 @@ namespace Badges.API.Controllers
 
 
         [HttpGet]
-        [Route("GetUserById/{id}")]
+        [Route("GetById/{id}")]
         public Badge GetBadgeById(int id)
         {
             return _badgesService.GetBadgeById(id);
