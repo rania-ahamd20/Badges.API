@@ -17,6 +17,7 @@ builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IBadgesRepository, BadgesRepository>();
+builder.Services.AddScoped<ICourseTraineeRepository,CourseTraineeRepository>();
 
 //----------------------------------------------------- Services -----------------------------------------------------
 
@@ -24,6 +25,7 @@ builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IBadgesService, BadgesService>();
+builder.Services.AddScoped<ICourseTraineeService, CourseTraineeService>();
 
 // Add services to the container.
 

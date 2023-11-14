@@ -43,7 +43,7 @@ namespace Badges.Api.Controllers
         }
 
         [HttpGet]
-        [Route("GetUserById/{id}")]
+        [Route("GetById/{id}")]
         public Assignment GetAssignmentsById(int id)
         {
             return _assignmentService.GetAssignmentsById(id);
