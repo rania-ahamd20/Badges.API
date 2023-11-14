@@ -16,12 +16,14 @@ builder.Services.AddScoped<IDbContext, DbContext>();
 builder.Services.AddScoped<IAssignmentRepository, AssignmentRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IBadgesRepository, BadgesRepository>();
 
 //----------------------------------------------------- Services -----------------------------------------------------
 
 builder.Services.AddScoped<IAssignmentService, AssignmentService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IBadgesService, BadgesService>();
 
 // Add services to the container.
 

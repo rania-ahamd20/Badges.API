@@ -174,18 +174,6 @@ namespace Badges.Core.Data
                     .ValueGeneratedOnAdd()
                     .HasColumnName("BADGESID");
 
-                entity.Property(e => e.FkAssignments)
-                    .HasColumnType("NUMBER(38)")
-                    .HasColumnName("FK_ASSIGNMENTS");
-
-                entity.Property(e => e.FkCourseid)
-                    .HasColumnType("NUMBER(38)")
-                    .HasColumnName("FK_COURSEID");
-
-                entity.Property(e => e.FkUserid)
-                    .HasColumnType("NUMBER(38)")
-                    .HasColumnName("FK_USERID");
-
                 entity.Property(e => e.Image)
                     .HasMaxLength(1000)
                     .IsUnicode(false)
@@ -201,23 +189,6 @@ namespace Badges.Core.Data
                     .IsUnicode(false)
                     .HasColumnName("TYPE");
 
-                entity.HasOne(d => d.FkAssignmentsNavigation)
-                    .WithMany(p => p.Badges)
-                    .HasForeignKey(d => d.FkAssignments)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("SYS_C008527");
-
-                entity.HasOne(d => d.FkCourse)
-                    .WithMany(p => p.Badges)
-                    .HasForeignKey(d => d.FkCourseid)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("SYS_C008525");
-
-                entity.HasOne(d => d.FkUser)
-                    .WithMany(p => p.Badges)
-                    .HasForeignKey(d => d.FkUserid)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("SYS_C008526");
             });
 
             modelBuilder.Entity<Course>(entity =>
