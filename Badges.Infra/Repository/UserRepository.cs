@@ -41,7 +41,7 @@ namespace Badges.Infra.Repository
             create.Add("Pass", user.Password, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("Ph", user.Phone, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("Im", user.Image, dbType: DbType.String, direction: ParameterDirection.Input);
-            create.Add("RID", user.FkRoleid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("RID", user.Roleid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
 
 
@@ -62,7 +62,7 @@ namespace Badges.Infra.Repository
             update.Add("Pass", user.Password, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("Ph", user.Phone, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("Im", user.Image, dbType: DbType.String, direction: ParameterDirection.Input);
-            update.Add("RID", user.FkRoleid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("RID", user.Roleid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("Users_Package.UPDATEUser", update, commandType: CommandType.StoredProcedure);
 

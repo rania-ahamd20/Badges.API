@@ -8,7 +8,7 @@ namespace Badges.Core.Data
         public Assignment()
         {
             AssignmentsTrainees = new HashSet<AssignmentsTrainee>();
-            Badges = new HashSet<Badge>();
+            BadgesTrainees = new HashSet<BadgesTrainee>();
         }
 
         public decimal Assignmentsid { get; set; }
@@ -17,10 +17,10 @@ namespace Badges.Core.Data
         public string? Name { get; set; }
         public decimal? Mark { get; set; }
         public string? Description { get; set; }
-        public decimal? FkCourseid { get; set; }
+        public decimal? Courseid { get; set; }
 
-        public virtual Course? FkCourse { get; set; }
+        public virtual Course? Course { get; set; }
         public virtual ICollection<AssignmentsTrainee> AssignmentsTrainees { get; set; }
-        public virtual ICollection<Badge> Badges { get; set; }
+        public virtual ICollection<BadgesTrainee> BadgesTrainees { get; set; }
     }
 }

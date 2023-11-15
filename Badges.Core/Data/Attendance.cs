@@ -5,13 +5,15 @@ namespace Badges.Core.Data
 {
     public partial class Attendance
     {
-        public decimal Attendanceid { get; set; }
-        public DateTime? Attendantedate { get; set; }
-        public decimal? Numattendance { get; set; }
-        public decimal? FkCourseid { get; set; }
-        public decimal? FkUserid { get; set; }
+        public Attendance()
+        {
+            AttendanceTrainees = new HashSet<AttendanceTrainee>();
+        }
 
-        public virtual Course? FkCourse { get; set; }
-        public virtual User? FkUser { get; set; }
+        public decimal Attendanceid { get; set; }
+        public decimal? Courseid { get; set; }
+
+        public virtual Course? Course { get; set; }
+        public virtual ICollection<AttendanceTrainee> AttendanceTrainees { get; set; }
     }
 }

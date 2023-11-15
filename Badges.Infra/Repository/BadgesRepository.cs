@@ -32,7 +32,7 @@ namespace Badges.Infra.Repository
             create.Add("type", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("text", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("image",badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
-
+            create.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("Badges_Package.create_badge", create, commandType: CommandType.StoredProcedure);
 
@@ -45,6 +45,7 @@ namespace Badges.Infra.Repository
             update.Add("type", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("text", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("image", badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
+            update.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Badges_Package.update_badge", update, commandType: CommandType.StoredProcedure);
