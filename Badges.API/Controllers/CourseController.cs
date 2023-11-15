@@ -16,7 +16,7 @@ namespace Badges.Api.Controllers
             _courseService = coursService;
         }
 
-        //sanaa
+
 
         [HttpGet]
         public List<Course> GetAllCourses()
@@ -56,7 +56,7 @@ namespace Badges.Api.Controllers
 
 
         [HttpGet]
-        [Route("GetById/{id}")]
+        [Route("GetUserById/{id}")]
         public Course GetCourseById(int id)
         {
             return _courseService.GetCourseById(id);

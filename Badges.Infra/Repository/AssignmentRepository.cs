@@ -15,7 +15,6 @@ namespace Badges.Infra.Repository
             _dbContext = dbContext;
         }       
 
-
         public List<Assignment> GetAllAssignments() {
 
 
@@ -33,7 +32,7 @@ namespace Badges.Infra.Repository
             create.Add("AName", assignment.Name, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("MK", assignment.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("Des", assignment.Description, dbType: DbType.String, direction: ParameterDirection.Input);
-            create.Add("CID", assignment.FkCourseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("CID", assignment.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("ASSIGNMENTS_PACKAGE.CREATEAssignments", create ,commandType: CommandType.StoredProcedure);
 
@@ -50,7 +49,7 @@ namespace Badges.Infra.Repository
             update.Add("AName", assignment.Name, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("MK", assignment.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("Des", assignment.Description, dbType: DbType.String, direction: ParameterDirection.Input);
-            update.Add("CID", assignment.FkCourseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("CID", assignment.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("Assignments_Package.UPDATEAssignments", update, commandType: CommandType.StoredProcedure);
 

@@ -9,7 +9,7 @@ namespace Badges.Core.Data
         {
             Assignments = new HashSet<Assignment>();
             Attendances = new HashSet<Attendance>();
-            Badges = new HashSet<Badge>();
+            BadgesTrainees = new HashSet<BadgesTrainee>();
             CourseTrainees = new HashSet<CourseTrainee>();
         }
 
@@ -20,12 +20,13 @@ namespace Badges.Core.Data
         public decimal? Duration { get; set; }
         public decimal? Sectionnum { get; set; }
         public string? Image { get; set; }
-        public decimal? FkUserid { get; set; }
+        public decimal? Userid { get; set; }
         public string? Coursenum { get; set; }
-        public virtual User? FkUser { get; set; }
+
+        public virtual User? User { get; set; }
         public virtual ICollection<Assignment> Assignments { get; set; }
         public virtual ICollection<Attendance> Attendances { get; set; }
-        public virtual ICollection<Badge> Badges { get; set; }
+        public virtual ICollection<BadgesTrainee> BadgesTrainees { get; set; }
         public virtual ICollection<CourseTrainee> CourseTrainees { get; set; }
     }
 }

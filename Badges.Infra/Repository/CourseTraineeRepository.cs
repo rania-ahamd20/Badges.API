@@ -2,12 +2,8 @@
 using Badges.Core.Data;
 using Badges.Core.Repository;
 using Dapper;
-using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace Badges.Infra.Repository
 {
@@ -30,8 +26,8 @@ namespace Badges.Infra.Repository
         {
             var create = new DynamicParameters();
             create.Add("mark", courseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            create.Add("course_id", courseTrainee.FkCourseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            create.Add("user_id", courseTrainee.FkCourseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("course_id", courseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("user_id", courseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Course_Trainee_Package.create_course_trainee", create, commandType: CommandType.StoredProcedure);
@@ -43,8 +39,8 @@ namespace Badges.Infra.Repository
             var update = new DynamicParameters();
             update.Add("id", CourseTrainee.Ctid, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("mark", CourseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("course_id", CourseTrainee.FkCourseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("user_id", CourseTrainee.FkUserid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("course_id", CourseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("user_id", CourseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Course_Trainee_Package.update_course_trainee", update, commandType: CommandType.StoredProcedure);

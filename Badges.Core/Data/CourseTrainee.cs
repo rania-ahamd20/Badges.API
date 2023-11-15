@@ -7,10 +7,10 @@ namespace Badges.Core.Data
     {
         public decimal Ctid { get; set; }
         public decimal? Mark { get; set; }
-        public decimal? FkCourseid { get; set; }
-        public decimal? FkUserid { get; set; }
+        public decimal? Courseid { get; set; }
+        public decimal? Userid { get; set; }
 
-        public virtual Course? FkCourse { get; set; }
-        public virtual User? FkUser { get; set; }
+        public virtual Course? Course { get; set; }
+        public virtual User? User { get; set; }
     }
 }

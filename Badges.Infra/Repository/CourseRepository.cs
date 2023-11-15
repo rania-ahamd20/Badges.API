@@ -30,7 +30,7 @@ namespace Badges.Infra.Repository
             create.Add("cDuration", Course.Duration, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("CsectionNum", Course.Sectionnum, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("Cimage", Course.Image, dbType: DbType.String, direction: ParameterDirection.Input);
-            create.Add("userCID", Course.FkUserid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("userCID", Course.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("Cnum", Course.Coursenum, dbType: DbType.String, direction: ParameterDirection.Input);
 
 
@@ -80,7 +80,7 @@ namespace Badges.Infra.Repository
             update.Add("cDuration", Course.Duration, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("CsectionNum", Course.Sectionnum, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("Cimage", Course.Image, dbType: DbType.String, direction: ParameterDirection.Input);
-            update.Add("userCID", Course.FkUserid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("userCID", Course.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("Cnum", Course.Coursenum, dbType: DbType.String, direction: ParameterDirection.Input);
 
 
