@@ -29,9 +29,9 @@ namespace Badges.Infra.Repository
         public bool CreateBadge(Badge badge)
         {
             var create = new DynamicParameters();
-            create.Add("type", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
-            create.Add("text", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
-            create.Add("image",badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
+            create.Add("tp", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
+            create.Add("tx", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
+            create.Add("img",badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("Badges_Package.create_badge", create, commandType: CommandType.StoredProcedure);
@@ -42,9 +42,9 @@ namespace Badges.Infra.Repository
         {
             var update = new DynamicParameters();
             update.Add("id", badge.Badgesid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("type", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
-            update.Add("text", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
-            update.Add("image", badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
+            update.Add("tp", badge.Type, dbType: DbType.String, direction: ParameterDirection.Input);
+            update.Add("tx", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
+            update.Add("img", badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
 

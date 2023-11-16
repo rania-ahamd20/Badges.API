@@ -25,22 +25,22 @@ namespace Badges.Infra.Repository
         public bool CreateCourseTrainee(CourseTrainee courseTrainee)
         {
             var create = new DynamicParameters();
-            create.Add("mark", courseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            create.Add("course_id", courseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            create.Add("user_id", courseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("mk", courseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("cid", courseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            create.Add("uid", courseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Course_Trainee_Package.create_course_trainee", create, commandType: CommandType.StoredProcedure);
 
             return result > 0;
         }
-        public bool UdateCourseTrainee(CourseTrainee CourseTrainee)
+        public bool UdateCourseTrainee(CourseTrainee courseTrainee)
         {
             var update = new DynamicParameters();
-            update.Add("id", CourseTrainee.Ctid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("mark", CourseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("course_id", CourseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
-            update.Add("user_id", CourseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("id", courseTrainee.Ctid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("mk", courseTrainee.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("cid", courseTrainee.Courseid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            update.Add("uid", courseTrainee.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Course_Trainee_Package.update_course_trainee", update, commandType: CommandType.StoredProcedure);
