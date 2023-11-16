@@ -74,7 +74,7 @@ namespace Badges.Infra.Repository
             var get = new DynamicParameters();
             get.Add("ATranieeID", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
 
-            var result = _dbContext.Connection.Query<AssignmentsTrainee>("ASSIGNMENTS_TR_Package.DeleteAssignmentsTr", get, commandType: CommandType.StoredProcedure);
+            var result = _dbContext.Connection.Query<AssignmentsTrainee>("ASSIGNMENTS_TR_Package.GetAssignmentsTrById", get, commandType: CommandType.StoredProcedure);
 
 
 
