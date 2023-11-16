@@ -34,6 +34,7 @@ builder.Services.AddScoped<IAttendanceRepository, AttendanceRepository>();
 builder.Services.AddScoped<IJWTRepository, JWTRepository>();
 builder.Services.AddScoped<ICourseRepository, CourseRepository>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped<IAttendanceTrRepository, AttendanceTrRepository>();
 
 
 //----------------------------------------------------- Services -----------------------------------------------------
@@ -46,6 +47,9 @@ builder.Services.AddScoped<IAttendanceService, AttendanceService>();
 builder.Services.AddScoped<IJWTService, JWTService>();
 builder.Services.AddScoped<ICourseService, CourseService>();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IAttendanceTrService, AttendanceTrService>();
+
+
 
 
 builder.Services.AddAuthentication(opt => {
