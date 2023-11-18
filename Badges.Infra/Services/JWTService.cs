@@ -46,9 +46,9 @@ namespace Badges.Infra.Services
                     // Subject
                     Subject = new ClaimsIdentity(new Claim[]
                     {
+                    new Claim("userid",result.Userid.ToString(),ClaimValueTypes.Integer64),
                     // new Claim(type, value)
                     new Claim("name", result.Username),
-
                     // new Claim(type, value)
                     new Claim("role", result.Roleid.ToString())
                     }),
