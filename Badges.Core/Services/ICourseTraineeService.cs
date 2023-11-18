@@ -14,5 +14,6 @@ namespace Badges.Core.Services
         public bool UdateCourseTrainee(CourseTrainee CourseTrainee);
         public bool DeleteCourseTrainee(int id);
         public CourseTrainee GetCourseTraineeById(int id);
+        public List<User> GetAllUser(int id);
     }
 }

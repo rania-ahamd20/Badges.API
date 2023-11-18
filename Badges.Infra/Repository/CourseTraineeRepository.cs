@@ -67,5 +67,15 @@ namespace Badges.Infra.Repository
 
             return result.FirstOrDefault()!;
         }
+
+        public List<User> GetAllUser(int id)
+        {
+            var get = new DynamicParameters();
+            get.Add("id", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
+
+            IEnumerable<User> result = _dbContext.Connection.Query<User>("GetallUserforCourse", get, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
     }
 }
