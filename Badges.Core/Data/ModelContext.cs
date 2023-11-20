@@ -200,6 +200,11 @@ namespace Badges.Core.Data
                     .ValueGeneratedOnAdd()
                     .HasColumnName("BADGESID");
 
+                entity.Property(e => e.Activecriteria)
+                    .HasMaxLength(3000)
+                    .IsUnicode(false)
+                    .HasColumnName("ACTIVECRITERIA");
+
                 entity.Property(e => e.Criteria)
                     .HasMaxLength(3000)
                     .IsUnicode(false)

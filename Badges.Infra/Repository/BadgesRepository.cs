@@ -8,6 +8,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace Badges.Infra.Repository
 {
@@ -33,6 +34,7 @@ namespace Badges.Infra.Repository
             create.Add("tx", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("img",badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
+            create.Add("ACT", badge.Activecriteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
             var result = _dbContext.Connection.Execute("Badges_Package.create_badge", create, commandType: CommandType.StoredProcedure);
 
@@ -46,6 +48,7 @@ namespace Badges.Infra.Repository
             update.Add("tx", badge.Text, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("img", badge.Image, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("CT", badge.Criteria, dbType: DbType.String, direction: ParameterDirection.Input);
+            update.Add("ACT", badge.Activecriteria, dbType: DbType.String, direction: ParameterDirection.Input);
 
 
             var result = _dbContext.Connection.Execute("Badges_Package.update_badge", update, commandType: CommandType.StoredProcedure);

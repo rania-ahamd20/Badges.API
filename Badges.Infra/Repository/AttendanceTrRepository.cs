@@ -35,7 +35,6 @@ namespace Badges.Infra.Repository
             var create = new DynamicParameters();
 
             create.Add("ADate", attendanceTr.Attendantedate, dbType: DbType.Date, direction: ParameterDirection.Input);
-            create.Add("ADate", attendanceTr.Attendantedate, dbType: DbType.Date, direction: ParameterDirection.Input);
             create.Add("CheckA", attendanceTr.Checkat, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("AID", attendanceTr.Attendanceid, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("UID", attendanceTr.Userid, dbType: DbType.Int32, direction: ParameterDirection.Input);

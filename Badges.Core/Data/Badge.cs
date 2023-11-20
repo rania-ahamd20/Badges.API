@@ -15,6 +15,7 @@ namespace Badges.Core.Data
         public string? Text { get; set; }
         public string? Image { get; set; }
         public string? Criteria { get; set; }
+        public string? Activecriteria { get; set; }
 
         public virtual ICollection<BadgesTrainee> BadgesTrainees { get; set; }
     }
