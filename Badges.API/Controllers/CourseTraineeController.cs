@@ -65,7 +65,7 @@ namespace Badges.API.Controllers
 
         [HttpGet]
         [Route("GetUserCourse/{id}")]
-        public List<User> GetAllUser(int id)
+        public List<DTO> GetAllUser(int id)
         {
             return _courseTraineeService.GetAllUser(id);
         }
