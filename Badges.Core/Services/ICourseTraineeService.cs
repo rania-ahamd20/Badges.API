@@ -15,5 +15,6 @@ namespace Badges.Core.Services
         public bool DeleteCourseTrainee(int id);
         public CourseTrainee GetCourseTraineeById(int id);
         public List<DTO> GetAllUser(int id);
+        public List<DTOC> GetAllCourses(int id);
     }
 }

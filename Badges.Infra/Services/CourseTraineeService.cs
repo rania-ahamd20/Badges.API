@@ -23,5 +23,6 @@ namespace Badges.Infra.Services
         public bool DeleteCourseTrainee(int id) { return _courseTraineeRepository.DeleteCourseTrainee(id); }
         public CourseTrainee GetCourseTraineeById(int id) { return _courseTraineeRepository.GetCourseTraineeById(id); }
         public List<DTO> GetAllUser(int id) { return _courseTraineeRepository.GetAllUser(id); }
+        public List<DTOC> GetAllCourses(int id) { return _courseTraineeRepository.GetAllCourses(id); }
     }
 }

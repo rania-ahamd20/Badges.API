@@ -69,5 +69,12 @@ namespace Badges.API.Controllers
         {
             return _courseTraineeService.GetAllUser(id);
         }
+
+        [HttpGet]
+        [Route("GetCoursesUser/{id}")]
+        public List<DTOC> GetAllCourses(int id)
+        {
+            return _courseTraineeService.GetAllCourses(id);
+        }
     }
 }

@@ -77,5 +77,15 @@ namespace Badges.Infra.Repository
 
             return result.ToList();
         }
+
+        public List<DTOC> GetAllCourses(int id)
+        {
+            var get = new DynamicParameters();
+            get.Add("id", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
+
+            IEnumerable<DTOC> result = _dbContext.Connection.Query<DTOC>("GetallCoursesforUser", get, commandType: CommandType.StoredProcedure);
+
+            return result.ToList();
+        }
     }
 }
