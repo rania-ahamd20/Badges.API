@@ -10,6 +10,7 @@ namespace Badges.Core.Data
         public decimal? Mark { get; set; }
         public decimal? Assignmentsid { get; set; }
         public decimal? Userid { get; set; }
+        public string? Assignmenturl { get; set; }
 
         public virtual Assignment? Assignments { get; set; }
         public virtual User? User { get; set; }

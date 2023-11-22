@@ -102,6 +102,10 @@ namespace Badges.Core.Data
                     .HasColumnType("NUMBER(38)")
                     .HasColumnName("ASSIGNMENTSID");
 
+                entity.Property(e => e.Assignmenturl)
+                    .IsUnicode(false)
+                    .HasColumnName("ASSIGNMENTURL");
+
                 entity.Property(e => e.Mark)
                     .HasColumnType("NUMBER")
                     .HasColumnName("MARK");

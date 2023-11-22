@@ -3,6 +3,7 @@ using Badges.Core.Common;
 using Badges.Core.Data;
 using Badges.Core.Repository;
 using System.Data;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 
 namespace Badges.Infra.Repository
@@ -33,7 +34,7 @@ namespace Badges.Infra.Repository
             create.Add("MK", assignment.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
             create.Add("AID", assignment.Assignmentsid, dbType: DbType.String, direction: ParameterDirection.Input);
             create.Add("UID", assignment.Userid, dbType: DbType.String, direction: ParameterDirection.Input);
-
+            create.Add("Url", assignment.Assignmenturl, dbType: DbType.String, direction: ParameterDirection.Input);
             var result = _dbContext.Connection.Execute("ASSIGNMENTS_TR_Package.CREATEAssignmentsTr", create, commandType: CommandType.StoredProcedure);
 
             return result > 0;
@@ -48,7 +49,7 @@ namespace Badges.Infra.Repository
             update.Add("MK", assignment.Mark, dbType: DbType.Int32, direction: ParameterDirection.Input);
             update.Add("AID", assignment.Assignmentsid, dbType: DbType.String, direction: ParameterDirection.Input);
             update.Add("UID", assignment.Userid, dbType: DbType.String, direction: ParameterDirection.Input);
-
+            update.Add("Url", assignment.Assignmenturl, dbType: DbType.String, direction: ParameterDirection.Input);
             var result = _dbContext.Connection.Execute("ASSIGNMENTS_TR_Package.UPDATEAssignmentsTr", update, commandType: CommandType.StoredProcedure);
 
 
