@@ -82,5 +82,16 @@ namespace Badges.Infra.Repository
             return result.FirstOrDefault()!;
         }
 
+        public List<DTOAT> GetAllAssignmentUser (int Uid, int Cid)
+        {   
+            var get = new DynamicParameters();
+            get.Add("UId", Uid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            get.Add("CId", Cid, dbType: DbType.Int32, direction: ParameterDirection.Input);
+
+            IEnumerable<DTOAT> result = _dbContext.Connection.Query<DTOAT>("GetallAssignmentsForUser", get , commandType: CommandType.StoredProcedure);
+            return result.ToList();
+
+        }
+
     }
 }

@@ -15,6 +15,7 @@ namespace Badges.Core.Repository
         public bool UpdateAssignmentTrainee(AssignmentsTrainee assignment);
         public bool DeleteAssignmentTrainee(int id);
         public AssignmentsTrainee GetAssignmentTraineeById(int id);
+        public List<DTOAT> GetAllAssignmentUser(int Uid, int Cid);
 
     }
 }

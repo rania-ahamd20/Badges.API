@@ -50,5 +50,12 @@ namespace Badges.Api.Controllers
         {
             return _assignmentTrService.GetAssignmentTraineeById(id);
         }
+
+        [HttpGet]
+        [Route("GetAU/{Uid}/{Cid}")]
+        public List<DTOAT> GetAllAssignmentUser(int Uid ,int Cid)
+        {
+            return _assignmentTrService.GetAllAssignmentUser(Uid,Cid);
+        }
     }
 }

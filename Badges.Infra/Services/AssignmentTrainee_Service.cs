@@ -39,5 +39,10 @@ namespace Badges.Infra.Services
             return _assignmentTrRepository.GetAssignmentTraineeById(id);
         }
 
+        public List<DTOAT> GetAllAssignmentUser(int Uid, int Cid)
+        {
+            return _assignmentTrRepository.GetAllAssignmentUser(Uid , Cid);
+        }
+
     }
 }
