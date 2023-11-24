@@ -4,7 +4,7 @@ using Badges.Core.Data;
 using Badges.Core.Services;
 
 namespace Badges.Api.Controllers
-{//
+{
     [Route("api/[controller]")]
     [ApiController]
     public class AttendanceController : ControllerBase
