@@ -8,7 +8,7 @@ using System.Data;
 namespace Badges.Infra.Repository
 {
     public class AttendanceRepository : IAttendanceRepository
-    {//
+    {
         private readonly IDbContext _dbContext;
 
         public AttendanceRepository(IDbContext dbContext)
