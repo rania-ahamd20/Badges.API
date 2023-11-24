@@ -37,5 +37,9 @@ namespace Badges.Infra.Services
         {
             return _attendanceRepository.GetAttendanceById(id);
         }
+        public List<DTOAttendance> GetattendanceCourse(int id)
+        {
+            return _attendanceRepository.GetattendanceCourse(id);
+        }
     }
 }

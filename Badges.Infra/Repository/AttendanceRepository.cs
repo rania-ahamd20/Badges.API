@@ -72,5 +72,13 @@ namespace Badges.Infra.Repository
             return result.FirstOrDefault()!;
         }
 
+        public List<DTOAttendance> GetattendanceCourse(int id)
+        {
+            var get = new DynamicParameters();
+            get.Add("Id", id, dbType: DbType.Int32, direction: ParameterDirection.Input);
+            IEnumerable<DTOAttendance> result = _dbContext.Connection.Query<DTOAttendance>("GetallAttendanceForCourse", get, commandType: CommandType.StoredProcedure);
+            return result.ToList();
+        }
+
     }
 }

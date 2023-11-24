@@ -48,5 +48,12 @@ namespace Badges.Api.Controllers
         {
             return _attendanceService.GetAttendanceById(id);
         }
+
+        [HttpGet]
+        [Route("GetattendanceCourse/{id}")]
+        public List<DTOAttendance> GetattendanceCourse(int id)
+        {
+            return _attendanceService.GetattendanceCourse(id);
+        }
     }
 }

@@ -15,6 +15,6 @@ namespace Badges.Core.Repository
         public bool UpdateAttendance(Attendance attendance);
         public bool DeleteAttendance(int id);
         public Attendance GetAttendanceById(int id);
-
+        public List<DTOAttendance> GetattendanceCourse(int id);
     }
 }
