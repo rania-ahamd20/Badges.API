@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Badges.Core.Data
-{
+{//
     public class DTOAttendance
     {
         public decimal Atid { get; set; }

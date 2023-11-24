@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Badges.Core.Services
-{
+{//
     public interface IAttendanceService
     {
         public List<Attendance> GetAllAttendance();
