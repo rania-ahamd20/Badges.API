@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Badges.Core.Data
 {
     public class DTOAttendance
-    {//
+    {
         public decimal Atid { get; set; }
         public DateTime? Attendantedate { get; set; }
         public decimal? Checkat { get; set; }
